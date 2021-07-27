@@ -18,9 +18,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      appBar: AppBar(
-        title: const Text('Nunua Car'),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(80.0),
+        child: AppBar(
+          title: Image.asset('assets/images/nunuacars_header.png',
+              fit: BoxFit.fill),
+        ),
       ),
       body: Center(
         child: HomeScreenWidgets.elementAt(_selectedIndex),
