@@ -5,8 +5,13 @@ class PostAd extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          color: Colors.red,
+          child: Center(child: Text('Post Ad Screen')),
+        ),
+      ),
     );
   }
 }

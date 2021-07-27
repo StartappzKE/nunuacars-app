@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'auth_screen_page_container.dart';
+
 class AuthenticationScreen extends StatefulWidget {
   final int goToScreenIndex;
 
@@ -20,15 +22,18 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
   _AuthenticationScreenState(this.goToScreenIndex);
 
   void _switchToAnotherAuthenticationScreen(int whichScreen) {
+    // should only be invoked for switching between login,
+    // registration and forgot password reset screens
     setState(() {
       goToScreenIndex = whichScreen;
     });
   }
 
-  void _goToHomeScreenOnASpecificPage(int theSpecificPage) {
+  void _goToHomeScreenOnASpecificPage(int theSpecificPageInHomeScreen) {
     String routeName = '/home';
 
-    switch (theSpecificPage) {
+    switch (theSpecificPageInHomeScreen) {
+      // as per the application routes set in place
       case 0:
         routeName = '/home';
         break;
@@ -43,6 +48,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
         break;
       //  default is /home
     }
+    // navigate to the specific page
     Navigator.pushNamed(context, routeName);
   }
 
@@ -50,13 +56,15 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80.0),
+        preferredSize: Size.fromHeight(150.0),
         child: AppBar(
           title: Image.asset('assets/images/nunuacars_header.png',
               fit: BoxFit.fill),
         ),
       ),
-      body: Container(),
+      body: Center(
+        child: authScreenPageContainer.elementAt(goToScreenIndex),
+      ),
       bottomNavigationBar: buildBottomNavigationBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
