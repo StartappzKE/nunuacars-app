@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nunuacars/screens/home_screen/home_screen.dart';
 import 'package:nunuacars/screens/post_ad/post_ad.dart';
 
 void main() {
@@ -12,8 +13,9 @@ class NunuaCars extends StatelessWidget {
         title: 'Nunua Cars',
         theme: ThemeData.light(),
         debugShowCheckedModeBanner: false,
-        initialRoute: '/postAd',
+        initialRoute: '/home',
         routes: {
+          '/home': (context) => HomeScreen(),
           '/postAd': (context) => PostAd(),
         });
   }
