@@ -16,7 +16,13 @@ class FeaturedCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
-      options: CarouselOptions(height: 300.0),
+      options: CarouselOptions(
+        height: 300.0,
+        autoPlay: true,
+        autoPlayInterval: Duration(seconds: 3),
+        autoPlayAnimationDuration: Duration(milliseconds: 800),
+        autoPlayCurve: Curves.fastOutSlowIn,
+      ),
       items: imgList
           .map((item) => Container(
                 child: Center(
