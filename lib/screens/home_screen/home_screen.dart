@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:nunuacars/screens/home_screen/home_screen_widgets.dart';
 
 class HomeScreen extends StatefulWidget {
-  final int goToScreenIndex = 1;
+  final int goToScreenIndex;
 
-  HomeScreen({int goToScreenIndex = 0});
+  HomeScreen({this.goToScreenIndex = 1});
 
   @override
   _HomeScreenState createState() => _HomeScreenState(this.goToScreenIndex);
