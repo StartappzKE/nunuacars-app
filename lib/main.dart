@@ -13,9 +13,12 @@ class NunuaCars extends StatelessWidget {
         title: 'Nunua Cars',
         theme: ThemeData.light(),
         debugShowCheckedModeBanner: false,
-        initialRoute: '/home',
+        initialRoute: '/menu',
         routes: {
           '/home': (context) => HomeScreen(),
+          '/search': (context) => HomeScreen(goToScreenIndex: 1),
+          '/profile': (context) => HomeScreen(goToScreenIndex: 2),
+          '/menu': (context) => HomeScreen(goToScreenIndex: 3),
           '/postAd': (context) => PostAd(),
         });
   }

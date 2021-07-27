@@ -3,7 +3,14 @@ import 'package:flutter/material.dart';
 import 'home_screen_carousel.dart';
 
 class HomeScreenWidget extends StatelessWidget {
-  const HomeScreenWidget({Key? key}) : super(key: key);
+  HomeScreenWidget({Key? key}) : super(key: key);
+
+  List<String> images = [
+    "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",
+    "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",
+    "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",
+    "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +50,53 @@ class HomeScreenWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Container(),
+                  new Align(
+                    alignment: Alignment.topCenter,
+                    child: Container(
+                      padding: EdgeInsets.all(12.0),
+                      child: GridView.builder(
+                        itemCount: images.length,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 4.0,
+                            mainAxisSpacing: 4.0),
+                        itemBuilder: (BuildContext context, int index) {
+                          return Image.network(images[index]);
+                        },
+                      ),
+                    ),
                   ),
+                  // Expanded(
+
+                  // height: 500,
+                  // child: Container(
+                  //   child: Column(
+                  //     children: [
+                  //       Row(
+                  //         children: [
+                  //           Text('Popular Cars'),
+                  //           Spacer(),
+                  //           Text('See all'),
+                  //         ],
+                  //       ),
+                  //       Container(
+                  //           padding: EdgeInsets.all(12.0),
+                  //           child: GridView.builder(
+                  //             itemCount: images.length,
+                  //             gridDelegate:
+                  //                 SliverGridDelegateWithFixedCrossAxisCount(
+                  //                     crossAxisCount: 2,
+                  //                     crossAxisSpacing: 4.0,
+                  //                     mainAxisSpacing: 4.0),
+                  //             itemBuilder: (BuildContext context, int index) {
+                  //               return Image.network(images[index]);
+                  //             },
+                  //           ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
+                  // ),
                 ],
               ),
             ),

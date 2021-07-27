@@ -2,16 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:nunuacars/screens/home_screen/home_screen_widgets.dart';
 
 class HomeScreen extends StatefulWidget {
+  final int goToScreenIndex = 1;
+
+  HomeScreen({int goToScreenIndex = 0});
+
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomeScreenState createState() => _HomeScreenState(this.goToScreenIndex);
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 0;
+  int goToScreenIndex;
+
+  _HomeScreenState(this.goToScreenIndex);
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      goToScreenIndex = index;
     });
   }
 
@@ -26,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: Center(
-        child: HomeScreenWidgets.elementAt(_selectedIndex),
+        child: HomeScreenWidgets.elementAt(goToScreenIndex),
       ),
       // bottomNavigationBar: BottomNavigationButtons(),
       bottomNavigationBar: buildBottomNavigationBar(),
@@ -70,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
           label: 'Menu',
         ),
       ],
-      currentIndex: _selectedIndex,
+      currentIndex: goToScreenIndex,
       selectedItemColor: Colors.amber,
       onTap: _onItemTapped,
     );
