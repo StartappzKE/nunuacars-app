@@ -21,14 +21,6 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
 
   _AuthenticationScreenState(this.goToScreenIndex);
 
-  void _switchToAnotherAuthenticationScreen(int whichScreen) {
-    // should only be invoked for switching between login,
-    // registration and forgot password reset screens
-    setState(() {
-      goToScreenIndex = whichScreen;
-    });
-  }
-
   void _goToHomeScreenOnASpecificPage(int theSpecificPageInHomeScreen) {
     String routeName = '/home';
 

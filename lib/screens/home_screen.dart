@@ -4,7 +4,7 @@ import 'package:nunuacars/screens/home_screen/home_screen_widgets.dart';
 class HomeScreen extends StatefulWidget {
   final int goToScreenIndex;
 
-  HomeScreen({this.goToScreenIndex = 1});
+  HomeScreen({this.goToScreenIndex = 0});
 
   @override
   _HomeScreenState createState() => _HomeScreenState(this.goToScreenIndex);
