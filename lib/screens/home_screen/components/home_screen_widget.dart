@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'home_screen_carousel.dart';
 
-class HomeScreenWidget extends StatelessWidget {
+class HomeScreenWidget extends StatefulWidget {
   HomeScreenWidget({Key? key}) : super(key: key);
 
+  @override
+  _HomeScreenWidgetState createState() => _HomeScreenWidgetState();
+}
+
+class _HomeScreenWidgetState extends State<HomeScreenWidget> {
   List<String> images = [
     "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",
     "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",
@@ -66,37 +71,6 @@ class HomeScreenWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // Expanded(
-
-                  // height: 500,
-                  // child: Container(
-                  //   child: Column(
-                  //     children: [
-                  //       Row(
-                  //         children: [
-                  //           Text('Popular Cars'),
-                  //           Spacer(),
-                  //           Text('See all'),
-                  //         ],
-                  //       ),
-                  //       Container(
-                  //           padding: EdgeInsets.all(12.0),
-                  //           child: GridView.builder(
-                  //             itemCount: images.length,
-                  //             gridDelegate:
-                  //                 SliverGridDelegateWithFixedCrossAxisCount(
-                  //                     crossAxisCount: 2,
-                  //                     crossAxisSpacing: 4.0,
-                  //                     mainAxisSpacing: 4.0),
-                  //             itemBuilder: (BuildContext context, int index) {
-                  //               return Image.network(images[index]);
-                  //             },
-                  //           ),
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
-                  // ),
                 ],
               ),
             ),

@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:nunuacars/screens/home_screen/components/home_screen_widget.dart';
+import 'package:nunuacars/screens/home_screen/components/profile_screen_widget.dart';
+import 'package:nunuacars/screens/home_screen/components/search_screen_widget.dart';
 
-List<Widget> HomeScreenWidgets = <Widget>[
+import 'components/menu_screen_widget.dart';
+
+List<Widget> homeScreenWidgets = <Widget>[
   HomeScreenWidget(),
-  Text(
-    'Index 1: Search',
-    // style: optionStyle,
-  ),
-  Text(
-    'Index 2: Profile',
-    // style: optionStyle,
-  ),
-  Text(
-    'Index 3: Menu',
-    // style: optionStyle,
-  ),
+  SearchScreenWidget(),
+  ProfileScreenWidget(),
+  MenuScreenWidget(),
 ];

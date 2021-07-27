@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: Center(
-        child: HomeScreenWidgets.elementAt(goToScreenIndex),
+        child: homeScreenWidgets.elementAt(goToScreenIndex),
       ),
       // bottomNavigationBar: BottomNavigationButtons(),
       bottomNavigationBar: buildBottomNavigationBar(),
